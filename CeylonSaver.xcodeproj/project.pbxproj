@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84C43C0E28C340D0003554AA /* CeylonSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C43C0D28C340D0003554AA /* CeylonSaverView.h */; };
-		84C43C1028C340D0003554AA /* CeylonSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C43C0F28C340D0003554AA /* CeylonSaverView.m */; };
+		840B8DAE28C68EC200557A1A /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840B8DAD28C68EC200557A1A /* thumbnail@2x.png */; };
+		840B8DB028C68EF700557A1A /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 840B8DAF28C68EF700557A1A /* thumbnail.png */; };
+		84C43C1928C34111003554AA /* CeylonSaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C43C1828C34111003554AA /* CeylonSaverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840B8DAD28C68EC200557A1A /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
+		840B8DAF28C68EF700557A1A /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		84C43C0A28C340D0003554AA /* CeylonSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeylonSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C43C0D28C340D0003554AA /* CeylonSaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CeylonSaverView.h; sourceTree = "<group>"; };
-		84C43C0F28C340D0003554AA /* CeylonSaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CeylonSaverView.m; sourceTree = "<group>"; };
+		84C43C1828C34111003554AA /* CeylonSaverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeylonSaverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +49,9 @@
 		84C43C0C28C340D0003554AA /* CeylonSaver */ = {
 			isa = PBXGroup;
 			children = (
-				84C43C0D28C340D0003554AA /* CeylonSaverView.h */,
-				84C43C0F28C340D0003554AA /* CeylonSaverView.m */,
+				840B8DAD28C68EC200557A1A /* thumbnail@2x.png */,
+				840B8DAF28C68EF700557A1A /* thumbnail.png */,
+				84C43C1828C34111003554AA /* CeylonSaverView.swift */,
 			);
 			path = CeylonSaver;
 			sourceTree = "<group>";
@@ -60,7 +63,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C43C0E28C340D0003554AA /* CeylonSaverView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +98,7 @@
 				TargetAttributes = {
 					84C43C0928C340D0003554AA = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -122,6 +125,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840B8DB028C68EF700557A1A /* thumbnail.png in Resources */,
+				840B8DAE28C68EC200557A1A /* thumbnail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C43C1028C340D0003554AA /* CeylonSaverView.m in Sources */,
+				84C43C1928C34111003554AA /* CeylonSaverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,17 +256,25 @@
 		84C43C1428C340D0003554AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = CeylonSaverView;
+				INFOPLIST_KEY_NSPrincipalClass = CeylonSaver.CeylonSaverView;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdglhm.CeylonSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -269,17 +282,24 @@
 		84C43C1528C340D0003554AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = CeylonSaverView;
+				INFOPLIST_KEY_NSPrincipalClass = CeylonSaver.CeylonSaverView;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdglhm.CeylonSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
