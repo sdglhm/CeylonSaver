@@ -10,18 +10,21 @@ import ScreenSaver
 class CeylonSaverView: ScreenSaverView {
     
     var image: NSImage?
-    var interval = 5
+    var interval = 25
     
     var transition = 1
     
-    var imageUrl = "https://api.lorem.space/image?w=1024&h=768" as NSString
+    var imageUrl = "https://ceylon-saver-app.vercel.app/api/index" as NSString
     
+    private var rectn: NSRect?
     
     override init?(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
         
         animationTimeInterval=TimeInterval(interval)
-
+        
+        self.rectn = frame
+        
     }
     
     required init?(coder decoder: NSCoder) {
@@ -38,17 +41,15 @@ class CeylonSaverView: ScreenSaverView {
     
     override func animateOneFrame() {
         needsDisplay = true
+        
+        loadImage(rect: self.rectn! as NSRect)
     }
     
     
     override func draw(_ rect: NSRect) {
         loadImage(rect: rect)
-        
     }
     
-    private func drawBackground(){
-        
-    }
     
     func performGammaFade() -> Bool {
         return true
